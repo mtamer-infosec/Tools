@@ -19,6 +19,12 @@ def get_public_ip():
     except Exception as e:
         return f"Error getting public IP: {e}"
 
+def get_hostname():
+    try:
+        return socket.gethostname()
+    except Exception as e:
+        return f"Error getting hostname: {e}"
 if __name__ == "__main__":
+    print("Host Name:", get_hostname())
     print("Local IP :", get_local_ip())
-    print("Public IP :", get_public_ip())
+    print("Public IP:",get_public_ip())
